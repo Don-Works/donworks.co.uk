@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     template: "%s | Don Works",
   },
   description:
-    "Don Works is Revitt's public work: MCPlexer, Brw, and other tools that may be useful beyond our own projects.",
+    "Don Works is where Revitt opens up the tools it builds — starting with MCPlexer and Brw, and growing as more prove useful. Free and open under AGPL-3.0.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
     title: "Don Works | Open Source by Revitt",
     description:
-      "MCPlexer, Brw, and other tools from Revitt's public work.",
+      "Open-source tools from Revitt: MCPlexer, Brw, and more to come.",
     url: siteUrl,
     siteName: "Don Works",
     type: "website",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         url: "/hero-control-panel.png",
         width: 1600,
         height: 900,
-        alt: "Square spacecraft-inspired control panel for Don Works",
+        alt: "Don Works — open-source tools from Revitt",
       },
     ],
   },
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Don Works | Open Source by Revitt",
     description:
-      "MCPlexer, Brw, and other tools from Revitt's public work.",
+      "Open-source tools from Revitt: MCPlexer, Brw, and more to come.",
     images: ["/hero-control-panel.png"],
   },
   robots: {

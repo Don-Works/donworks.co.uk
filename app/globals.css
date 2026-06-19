@@ -102,20 +102,10 @@ a {
 }
 
 .brand-wordmark {
-  position: relative;
   color: var(--color-text);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0;
-}
-
-.brand-wordmark::after {
-  content: attr(data-text);
-  position: absolute;
-  inset: 0;
-  color: var(--color-red);
-  opacity: 0;
-  animation: wordmark-glitch 5.5s infinite steps(1);
 }
 
 .main-nav {
@@ -232,7 +222,6 @@ a {
 }
 
 .hero-title {
-  position: relative;
   width: min-content;
   margin: 0;
   color: var(--color-text);
@@ -244,26 +233,6 @@ a {
   text-shadow:
     0 0 24px color-mix(in srgb, var(--color-lime) 25%, transparent),
     0 0 70px color-mix(in srgb, var(--color-lime) 12%, transparent);
-  animation: hero-glitch-base 6.8s infinite linear;
-}
-
-.hero-title::before,
-.hero-title::after {
-  content: attr(data-text);
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.hero-title::before {
-  color: var(--color-lime);
-  animation: hero-glitch-lime 6.8s infinite steps(1);
-}
-
-.hero-title::after {
-  color: var(--color-red);
-  animation: hero-glitch-red 6.8s infinite steps(1);
 }
 
 .hero-lede {
@@ -376,27 +345,27 @@ a {
   font-size: 0.61rem;
 }
 
-.telemetry-grid {
+.facts-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.5rem;
   margin: 0;
 }
 
-.telemetry-grid div {
+.facts-grid div {
   border: 1px solid var(--color-border);
   background: color-mix(in srgb, var(--color-surface) 82%, transparent);
   padding: 0.8rem;
 }
 
-.telemetry-grid dt {
+.facts-grid dt {
   margin-bottom: 0.35rem;
   color: var(--color-text-dim);
   font-size: 0.62rem;
   text-transform: uppercase;
 }
 
-.telemetry-grid dd {
+.facts-grid dd {
   margin: 0;
   color: var(--color-text);
   font-size: 0.78rem;
@@ -427,7 +396,7 @@ a {
 }
 
 .section-header h2,
-.signal-shell h2 {
+.closing-shell h2 {
   margin: 0;
   color: var(--color-text);
   font-size: clamp(2rem, 6vw, 3.6rem);
@@ -438,7 +407,7 @@ a {
 }
 
 .section-header p:not(.section-kicker),
-.signal-shell p {
+.closing-shell p {
   margin: 1rem 0 0;
   color: var(--color-text-muted);
   font-size: 0.96rem;
@@ -492,7 +461,7 @@ a {
 
 .panel-topline span,
 .wide-panel > span {
-  color: var(--color-red);
+  color: var(--color-text-muted);
   font-size: 0.65rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -593,7 +562,7 @@ a {
   gap: 0.75rem;
 }
 
-.signal-shell {
+.closing-shell {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
@@ -780,95 +749,6 @@ a {
   border: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
 }
 
-@keyframes wordmark-glitch {
-  0%,
-  88%,
-  100% {
-    opacity: 0;
-    transform: none;
-  }
-  90% {
-    opacity: 0.7;
-    clip-path: inset(0 0 60% 0);
-    transform: translateX(2px);
-  }
-  92% {
-    opacity: 0.55;
-    clip-path: inset(62% 0 0 0);
-    transform: translateX(-2px);
-  }
-  94% {
-    opacity: 0;
-  }
-}
-
-@keyframes hero-glitch-base {
-  0%,
-  4.4%,
-  100% {
-    transform: none;
-  }
-  4.8% {
-    transform: skewX(-1.5deg) translateX(-3px);
-  }
-  5.2% {
-    transform: skewX(1deg) translateX(3px);
-  }
-  5.8% {
-    transform: translateY(-2px);
-  }
-  6.2% {
-    transform: none;
-  }
-}
-
-@keyframes hero-glitch-lime {
-  0%,
-  4.4%,
-  100% {
-    opacity: 0;
-  }
-  4.8% {
-    opacity: 0.62;
-    clip-path: inset(12% 0 72% 0);
-    transform: translateX(7px);
-  }
-  5.2% {
-    opacity: 0.72;
-    clip-path: inset(58% 0 15% 0);
-    transform: translateX(-5px);
-  }
-  5.8% {
-    opacity: 0.46;
-    clip-path: inset(36% 0 42% 0);
-    transform: translateX(4px);
-  }
-  6.2% {
-    opacity: 0;
-  }
-}
-
-@keyframes hero-glitch-red {
-  0%,
-  4.5%,
-  100% {
-    opacity: 0;
-  }
-  4.9% {
-    opacity: 0.58;
-    clip-path: inset(62% 0 18% 0);
-    transform: translateX(-6px);
-  }
-  5.4% {
-    opacity: 0.52;
-    clip-path: inset(18% 0 68% 0);
-    transform: translateX(4px);
-  }
-  6% {
-    opacity: 0;
-  }
-}
-
 @media (min-width: 540px) {
   .hero-actions {
     flex-direction: row;
@@ -878,7 +758,7 @@ a {
     min-width: 11rem;
   }
 
-  .telemetry-grid {
+  .facts-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -896,7 +776,7 @@ a {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .signal-shell {
+  .closing-shell {
     grid-template-columns: 1fr auto;
   }
 

@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  Blocks,
   CircuitBoard,
   Github,
+  Globe,
+  Handshake,
+  Hammer,
   Radar,
-  Route,
-  ShieldCheck,
-  Wrench,
+  Users,
   type LucideIcon,
 } from "lucide-react";
 
@@ -25,27 +25,6 @@ type ProductItem = PanelItem & {
   action: string;
 };
 
-const buildNotes: PanelItem[] = [
-  {
-    label: "runtime",
-    title: "MCPlexer runs the harness",
-    body: "Tasks, skills, memory, Telegram updates, browser control, routed MCP tools, and audit all sit behind one operating layer.",
-    icon: Wrench,
-  },
-  {
-    label: "browser",
-    title: "Brw works in real tabs",
-    body: "It finds logged-in Chrome tabs, reads awkward dashboards, clicks through vendor flows, and verifies the result without pretending the web is clean.",
-    icon: Blocks,
-  },
-  {
-    label: "ops",
-    title: "Website launch skills",
-    body: "Cloudflare, Vercel, and 123-reg notes capture the weird bits: hidden tabs, stale refs, nameserver panels, Domain Connect, and final DNS checks.",
-    icon: ShieldCheck,
-  },
-];
-
 const githubUrl = "https://github.com/Don-Works";
 const mcplexerUrl = "https://github.com/Don-Works/mcplexer";
 const brwUrl = "https://github.com/Don-Works/brw";
@@ -55,62 +34,82 @@ const revittUrl =
 
 const products: ProductItem[] = [
   {
-    label: "mcpx",
+    label: "mcplexer",
     title: "MCPlexer",
-    meta: "agent runtime / MCP gateway",
-    body: "The control plane Revitt uses for serious agent work: task state, skills, memory, secret-safe tool calls, browser automation, and routed MCP access.",
+    meta: "agent gateway for MCP tools",
+    body: "The gateway every Revitt agent runs through. It decides which tools an agent can reach based on the folder you're working in, keeps your secrets out of the model, asks before anything risky, and keeps a record of every call. A bit like direnv, but for AI tools.",
     icon: CircuitBoard,
     href: mcplexerUrl,
-    action: "Open MCPlexer",
+    action: "View MCPlexer",
   },
   {
     label: "brw",
     title: "Brw",
-    meta: "browser automation for AI harnesses",
-    body: "Chrome automation that works where launches actually happen: logged-in tabs, semantic actions, screenshots, stale refs, and outcome checks.",
+    meta: "a real browser for AI agents",
+    body: "Brw drives a real, visible Chrome window so an agent can work on the actual web — signed-in tabs, real clicks and forms, and a check after every step that what it tried to do actually happened.",
     icon: Radar,
     href: brwUrl,
-    action: "Open Brw",
+    action: "View Brw",
   },
   {
-    label: "site",
-    title: "donworks.co.uk",
-    meta: "public landing page / launch notes",
-    body: "This site, the launch path, and the first website-ops skill pack for Cloudflare, Vercel, and 123-reg setup runs.",
-    icon: Route,
-    href: siteRepoUrl,
-    action: "Open site repo",
+    label: "next",
+    title: "More on the way",
+    meta: "the rest of the bench",
+    body: "We build a lot of tooling at Revitt to keep our own work running. As each piece proves itself, we open it up here. Everything lives on GitHub, so you can watch the next ones land.",
+    icon: Globe,
+    href: githubUrl,
+    action: "Don Works on GitHub",
   },
 ];
 
-const telemetry = [
-  ["scope", "public product bench"],
-  ["parent", "revitt.co"],
-  ["surface", "MCPlexer / Brw / skills"],
-  ["stance", "ship the tool and the runbook"],
+const ethos: PanelItem[] = [
+  {
+    label: "people",
+    title: "We start with people",
+    body: "Every tool here exists because it made someone's actual work easier — ours, a client's, or both. We build for the person doing the job, not for a demo or a screenshot.",
+    icon: Users,
+  },
+  {
+    label: "tools",
+    title: "We build things that work",
+    body: "These aren't experiments we threw over the wall. They're the tools we run our own delivery on, every day, with the rough edges sanded down because we have to live with them too.",
+    icon: Hammer,
+  },
+  {
+    label: "open",
+    title: "We share so it gets better",
+    body: "Good tools go stale when you keep them to yourself. Open them up and people find the bugs, the missing pieces, and the better ideas you'd never have had on your own. We'd rather build in the open and get there faster.",
+    icon: Handshake,
+  },
+];
+
+const facts = [
+  ["from", "Revitt"],
+  ["licence", "AGPL-3.0"],
+  ["cost", "free & open"],
+  ["source", "GitHub"],
 ];
 
 const footerGroups = [
   {
-    title: "Products",
+    title: "Tools",
     links: [
       ["MCPlexer", mcplexerUrl],
       ["Brw", brwUrl],
-      ["Site repo", siteRepoUrl],
     ],
   },
   {
     title: "Revitt",
     links: [
       ["Revitt", `${revittUrl}&utm_content=footer_revitt`],
-      ["Don Works GitHub", githubUrl],
+      ["Don Works on GitHub", githubUrl],
     ],
   },
   {
-    title: "Protocol",
+    title: "Source",
     links: [
-      ["LLM index", "/llms.txt"],
-      ["Source", siteRepoUrl],
+      ["This site's code", siteRepoUrl],
+      ["llms.txt", "/llms.txt"],
     ],
   },
 ];
@@ -123,14 +122,12 @@ export default function HomePage() {
           <span className="brand-mark" aria-hidden="true">
             DW
           </span>
-          <span className="brand-wordmark" data-text="DON WORKS">
-            DON WORKS
-          </span>
+          <span className="brand-wordmark">DON WORKS</span>
         </Link>
         <nav className="main-nav" aria-label="Main navigation">
-          <a href="#release-bay">Products</a>
-          <a href="#principles">Built</a>
-          <a href="#signal">Signal</a>
+          <a href="#tools">Tools</a>
+          <a href="#why">Why</a>
+          <a href="#contribute">Contribute</a>
           <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
             GitHub
           </Link>
@@ -149,12 +146,13 @@ export default function HomePage() {
                 <span aria-hidden="true" />
                 open source by Revitt
               </p>
-              <h1 className="hero-title" data-text="Don Works">
-                Don Works
-              </h1>
+              <h1 className="hero-title">Don Works</h1>
               <p className="hero-lede">
-                Revitt&apos;s public work: MCPlexer, Brw, and other tools we
-                believe may be useful beyond our own projects.
+                Don Works is where we open up the tools we build at Revitt. We
+                make them to do our own work properly, and when one turns out to
+                be useful beyond our own projects, we share it here for anyone to
+                pick up and run with. It starts with MCPlexer and Brw, and it
+                grows as we open up more.
               </p>
               <div className="hero-actions">
                 <Link
@@ -164,31 +162,31 @@ export default function HomePage() {
                   className="button button-primary"
                 >
                   <Github aria-hidden="true" />
-                  MCPlexer repo
+                  MCPlexer
                 </Link>
                 <Link href={brwUrl} target="_blank" rel="noopener noreferrer" className="button button-secondary">
                   <Radar aria-hidden="true" />
-                  Brw repo
+                  Brw
                 </Link>
               </div>
             </div>
 
-            <aside className="hero-console" aria-label="Don Works control panel">
+            <aside className="hero-console" aria-label="About Don Works">
               <div className="asset-frame">
                 <Image
                   src="/hero-control-panel.png"
-                  alt="Abstract square control panel with acid-lime indicators and red hardware accents"
+                  alt="Abstract control panel with acid-lime indicators, the Don Works visual mark"
                   fill
                   priority
                   sizes="(min-width: 1024px) 44vw, 92vw"
                 />
                 <div className="asset-readout" aria-hidden="true">
-                  <span>DW-OS</span>
-                  <span>ARM / OPEN</span>
+                  <span>DON WORKS</span>
+                  <span>OPEN SOURCE</span>
                 </div>
               </div>
-              <dl className="telemetry-grid">
-                {telemetry.map(([term, detail]) => (
+              <dl className="facts-grid">
+                {facts.map(([term, detail]) => (
                   <div key={term}>
                     <dt>{term}</dt>
                     <dd>{detail}</dd>
@@ -199,16 +197,16 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="release-bay" className="section section-alt">
+        <section id="tools" className="section section-alt">
           <div className="section-inner">
             <div className="section-header">
-              <p className="section-kicker">products</p>
-              <h2>Concrete tools, not a vibe.</h2>
+              <p className="section-kicker">what&apos;s here</p>
+              <h2>The tools we use, opened up</h2>
               <p>
-                The first Don Works drop is the operating layer Revitt uses
-                while building systems: MCPlexer for routed tools and state,
-                Brw for browser work, and the launch notes that make the next
-                run faster.
+                Everything here is something we built to get our own work done,
+                then decided was worth sharing. Right now that&apos;s MCPlexer
+                and Brw. We&apos;ll keep adding to it as more of our internal
+                tools prove useful enough to hand over.
               </p>
             </div>
             <div className="panel-grid">
@@ -231,19 +229,21 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="principles" className="section">
+        <section id="why" className="section">
           <div className="section-inner split-layout">
             <div className="section-header section-header-sticky">
-              <p className="section-kicker">built here</p>
-              <h2>Products with the rough edges included.</h2>
+              <p className="section-kicker">why we do this</p>
+              <h2>We look after people, and we build tools</h2>
               <p>
-                Don Works should read like a bench with real parts on it:
-                product repos, launch notes, and the weird operational details
-                that usually get lost.
+                That&apos;s the whole idea behind Revitt, and it&apos;s the whole
+                idea behind Don Works. We&apos;d rather not be the kind of shop
+                that keeps everything locked away and cut off from everyone else.
+                Good tools get better when more people use them, poke at them,
+                and send fixes back — so we open up the ones we think can help.
               </p>
             </div>
             <div className="stacked-panels">
-              {buildNotes.map(({ icon: Icon, ...item }) => (
+              {ethos.map(({ icon: Icon, ...item }) => (
                 <article key={item.title} className="wide-panel">
                   <span>{item.label}</span>
                   <div>
@@ -257,26 +257,39 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="signal" className="section section-band">
-          <div className="section-inner signal-shell">
+        <section id="contribute" className="section section-band">
+          <div className="section-inner closing-shell">
             <div>
-              <p className="section-kicker">signal</p>
-              <h2>First drop: MCPlexer and Brw.</h2>
+              <p className="section-kicker">contributing</p>
+              <h2>Use it, build on it, send the good bits back</h2>
               <p>
-                MCPlexer gives agents a serious operating layer. Brw gives
-                harnesses the browser automation they need for real accounts,
-                real tabs, and real verification loops. The repos are public;
-                the runbooks follow the work.
+                Don Works is released under the AGPL-3.0 licence. In plain terms:
+                you can use these tools, change them, and build on them however
+                you like, for free. The one thing we ask is that if you improve
+                them, you share those improvements back — even if you&apos;re
+                running a changed version as a service. That way everyone&apos;s
+                copy keeps getting better instead of quietly forking off into a
+                dozen private versions. If that doesn&apos;t fit how your
+                business works,{" "}
+                <Link
+                  href={`${revittUrl}&utm_content=contribute_commercial`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  talk to us at Revitt
+                </Link>{" "}
+                about a commercial licence — that&apos;s one of the ways the open
+                work and the paid work look after each other.
               </p>
             </div>
             <Link
-              href={`${revittUrl}&utm_content=signal_cta`}
+              href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="button button-secondary"
             >
-              Revitt
-              <ArrowRight aria-hidden="true" />
+              <Github aria-hidden="true" />
+              Browse the code
             </Link>
           </div>
         </section>
@@ -290,7 +303,7 @@ export default function HomePage() {
             </span>
             <div>
               <span>DON WORKS</span>
-              <p>Open-source products and launch notes from Revitt.</p>
+              <p>Open-source tools from Revitt — the ones we think might help you too.</p>
             </div>
           </div>
           <nav className="footer-nav" aria-label="Footer navigation">
@@ -313,7 +326,7 @@ export default function HomePage() {
         </div>
         <div className="footer-bottom">
           <span>revitt.co / donworks.co.uk</span>
-          <span>MCPlexer + Brw are the first public drops.</span>
+          <span>Made by Revitt · open for everyone</span>
         </div>
       </footer>
     </>

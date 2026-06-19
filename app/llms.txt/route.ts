@@ -9,7 +9,9 @@ export function GET() {
       "- Parent: https://revitt.co",
       "- Source: https://github.com/Don-Works",
       "",
-      "Focus areas: practical tools, reusable Codex/MCP skills, website operations notes, and field-tested patterns from real delivery work.",
+      "What you'll find here: tools we built at Revitt and decided to open up. It starts with MCPlexer (an MCP gateway that routes and secures AI tool calls) and Brw (a real browser for AI agents), and grows as more of our internal tools prove useful.",
+      "",
+      "Everything is released under AGPL-3.0 — free to use, change, and build on, with improvements shared back. If that doesn't fit your business, ask Revitt about a commercial licence.",
     ].join("\n"),
     {
       headers: {
