@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     template: "%s | Don Works",
   },
   description:
-    "Don Works is Revitt's public bench for MCPlexer, Brw, and the launch skills behind real agent and browser automation work.",
+    "Don Works is Revitt's public work: MCPlexer, Brw, and other tools that may be useful beyond our own projects.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
     title: "Don Works | Open Source by Revitt",
     description:
-      "MCPlexer, Brw, and practical launch notes from Revitt's open-source product bench.",
+      "MCPlexer, Brw, and other tools from Revitt's public work.",
     url: siteUrl,
     siteName: "Don Works",
     type: "website",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Don Works | Open Source by Revitt",
     description:
-      "MCPlexer, Brw, and practical launch notes from Revitt's open-source product bench.",
+      "MCPlexer, Brw, and other tools from Revitt's public work.",
     images: ["/hero-control-panel.png"],
   },
   robots: {

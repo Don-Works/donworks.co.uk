@@ -7,3 +7,12 @@ out/
 dist/
 coverage/
 *.log
+
+# Local agent/runtime state
+.mcplexer/
+.claude/
+.mimocode/
+.worktrees/
+.codex/
+.opencode/
+.gemini/
