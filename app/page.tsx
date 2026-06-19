@@ -131,7 +131,7 @@ export default function HomePage() {
           <a href="#release-bay">Products</a>
           <a href="#principles">Built</a>
           <a href="#signal">Signal</a>
-          <Link href={githubUrl} target="_blank">
+          <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
             GitHub
           </Link>
         </nav>
@@ -153,20 +153,20 @@ export default function HomePage() {
                 Don Works
               </h1>
               <p className="hero-lede">
-                Revitt&apos;s public bench for MCPlexer, Brw, and the small
-                operating skills that make agents useful in logged-in, messy
-                accounts.
+                Revitt&apos;s public work: MCPlexer, Brw, and other tools we
+                believe may be useful beyond our own projects.
               </p>
               <div className="hero-actions">
                 <Link
                   href={mcplexerUrl}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="button button-primary"
                 >
                   <Github aria-hidden="true" />
                   MCPlexer repo
                 </Link>
-                <Link href={brwUrl} target="_blank" className="button button-secondary">
+                <Link href={brwUrl} target="_blank" rel="noopener noreferrer" className="button button-secondary">
                   <Radar aria-hidden="true" />
                   Brw repo
                 </Link>
@@ -221,7 +221,7 @@ export default function HomePage() {
                   <p className="panel-meta">{item.meta}</p>
                   <h3>{item.title}</h3>
                   <p>{item.body}</p>
-                  <Link href={item.href} target="_blank" className="panel-link">
+                  <Link href={item.href} target="_blank" rel="noopener noreferrer" className="panel-link">
                     {item.action}
                     <ArrowRight aria-hidden="true" />
                   </Link>
@@ -272,6 +272,7 @@ export default function HomePage() {
             <Link
               href={`${revittUrl}&utm_content=signal_cta`}
               target="_blank"
+              rel="noopener noreferrer"
               className="button button-secondary"
             >
               Revitt
@@ -301,6 +302,7 @@ export default function HomePage() {
                     key={label}
                     href={href}
                     target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     {label}
                   </Link>
