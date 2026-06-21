@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     locale: "en_GB",
     images: [
       {
-        url: "/hero-control-panel.png",
+        url: "/og.png",
         width: 1600,
         height: 900,
         alt: "Don Works — open-source tools from Revitt",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Don Works | Open Source by Revitt",
     description:
       "Open-source tools from Revitt: MCPlexer, Brw, and more to come.",
-    images: ["/hero-control-panel.png"],
+    images: ["/og.png"],
   },
   robots: {
     index: true,

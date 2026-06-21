@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { DonWorksMark } from "./components/DonWorksMark";
 import {
   ArrowRight,
   CircuitBoard,
@@ -140,60 +140,44 @@ export default function HomePage() {
           <div className="hero-grid-plane" aria-hidden="true" />
           <div className="scanlines" aria-hidden="true" />
 
-          <div className="hero-shell">
-            <div className="hero-copy">
-              <p className="eyebrow">
-                <span aria-hidden="true" />
-                open source by Revitt
-              </p>
-              <h1 className="hero-title">Don Works</h1>
-              <p className="hero-lede">
-                Don Works is where we open up the tools we build at Revitt. We
-                make them to do our own work properly, and when one turns out to
-                be useful beyond our own projects, we share it here for anyone to
-                pick up and run with. It starts with MCPlexer and Brw, and it
-                grows as we open up more.
-              </p>
-              <div className="hero-actions">
-                <Link
-                  href={mcplexerUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="button button-primary"
-                >
-                  <Github aria-hidden="true" />
-                  MCPlexer
-                </Link>
-                <Link href={brwUrl} target="_blank" rel="noopener noreferrer" className="button button-secondary">
-                  <Radar aria-hidden="true" />
-                  Brw
-                </Link>
-              </div>
+          <div className="hero-centered">
+            <p className="eyebrow">
+              <span aria-hidden="true" />
+              open source by Revitt
+            </p>
+            <h1 className="hero-mark">
+              <DonWorksMark title="Don Works" />
+            </h1>
+            <p className="hero-lede">
+              Don Works is where we open up the tools we build at Revitt. We
+              make them to do our own work properly, and when one turns out to
+              be useful beyond our own projects, we share it here for anyone to
+              pick up and run with. It starts with MCPlexer and Brw, and it
+              grows as we open up more.
+            </p>
+            <div className="hero-actions">
+              <Link
+                href={mcplexerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button button-primary"
+              >
+                <Github aria-hidden="true" />
+                MCPlexer
+              </Link>
+              <Link href={brwUrl} target="_blank" rel="noopener noreferrer" className="button button-secondary">
+                <Radar aria-hidden="true" />
+                Brw
+              </Link>
             </div>
-
-            <aside className="hero-console" aria-label="About Don Works">
-              <div className="asset-frame">
-                <Image
-                  src="/hero-control-panel.png"
-                  alt="Abstract control panel with acid-lime indicators, the Don Works visual mark"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 44vw, 92vw"
-                />
-                <div className="asset-readout" aria-hidden="true">
-                  <span>DON WORKS</span>
-                  <span>OPEN SOURCE</span>
+            <dl className="facts-grid">
+              {facts.map(([term, detail]) => (
+                <div key={term}>
+                  <dt>{term}</dt>
+                  <dd>{detail}</dd>
                 </div>
-              </div>
-              <dl className="facts-grid">
-                {facts.map(([term, detail]) => (
-                  <div key={term}>
-                    <dt>{term}</dt>
-                    <dd>{detail}</dd>
-                  </div>
-                ))}
-              </dl>
-            </aside>
+              ))}
+            </dl>
           </div>
         </section>
 
