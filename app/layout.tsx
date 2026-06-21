@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     template: "%s | Don Works",
   },
   description:
-    "Don Works is where Revitt opens up the tools it builds — starting with MCPlexer and Brw, and growing as more prove useful. Free and open under AGPL-3.0.",
+    "Don Works is where Revitt opens up the tools it builds — starting with MCPlexer and brw, and growing as more prove useful. Free and open under AGPL-3.0.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
     title: "Don Works | Open Source by Revitt",
     description:
-      "Open-source tools from Revitt: MCPlexer, Brw, and more to come.",
+      "Open-source tools from Revitt: MCPlexer, brw, and more to come.",
     url: siteUrl,
     siteName: "Don Works",
     type: "website",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Don Works | Open Source by Revitt",
     description:
-      "Open-source tools from Revitt: MCPlexer, Brw, and more to come.",
+      "Open-source tools from Revitt: MCPlexer, brw, and more to come.",
     images: ["/og.png"],
   },
   robots: {

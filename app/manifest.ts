@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Don Works",
     short_name: "Don Works",
     description:
-      "Open-source tools from Revitt — MCPlexer, Brw, and more to come. Free and open under AGPL-3.0.",
+      "Open-source tools from Revitt — MCPlexer, brw, and more to come. Free and open under AGPL-3.0.",
     start_url: "/",
     display: "standalone",
     background_color: "#050604",
