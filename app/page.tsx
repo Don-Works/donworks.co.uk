@@ -26,8 +26,10 @@ type ProductItem = PanelItem & {
 };
 
 const githubUrl = "https://github.com/Don-Works";
-const mcplexerUrl = "https://mcplexer.com";
-const brwUrl = "https://brw.donworks.co.uk";
+const mcplexerUrl =
+  "https://mcplexer.com/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
+const brwUrl =
+  "https://brw.donworks.co.uk/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
 const siteRepoUrl = "https://github.com/Don-Works/donworks.co.uk";
 const revittUrl =
   "https://revitt.co/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
