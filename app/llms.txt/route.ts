@@ -8,6 +8,8 @@ export function GET() {
       "- Site: https://donworks.co.uk",
       "- Parent: https://revitt.co",
       "- Source: https://github.com/Don-Works",
+      "- MCPlexer: https://mcplexer.com",
+      "- Brw: https://brw.donworks.co.uk",
       "",
       "What you'll find here: tools we built at Revitt and decided to open up. It starts with MCPlexer (an MCP gateway that routes and secures AI tool calls) and Brw (a real browser for AI agents), and grows as more of our internal tools prove useful.",
       "",
