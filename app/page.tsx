@@ -3,11 +3,13 @@ import { DonWorksMark } from "./components/DonWorksMark";
 import {
   ArrowRight,
   CircuitBoard,
+  Gauge,
   Github,
   Globe,
   Handshake,
   Hammer,
   Radar,
+  ShieldAlert,
   Users,
   type LucideIcon,
 } from "lucide-react";
@@ -30,6 +32,10 @@ const mcplexerUrl =
   "https://mcplexer.com/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
 const brwUrl =
   "https://brw.donworks.co.uk/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
+const residentUrl =
+  "https://github.com/Don-Works/resident?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
+const handlerUrl =
+  "https://github.com/Don-Works/handler?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
 const siteRepoUrl = "https://github.com/Don-Works/donworks.co.uk";
 const revittUrl =
   "https://revitt.co/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
@@ -52,6 +58,24 @@ const products: ProductItem[] = [
     icon: Radar,
     href: brwUrl,
     action: "View brw",
+  },
+  {
+    label: "resident",
+    title: "Resident",
+    meta: "macOS gauge for local-model memory",
+    body: "A macOS menu bar gauge for the memory your local models actually live in. Resident weights against the GPU ceiling, swap paging, per-model decode ceilings, and live tok/s — and it tells you which limit is actually binding, not just that memory is 83% full.",
+    icon: Gauge,
+    href: residentUrl,
+    action: "Resident on GitHub",
+  },
+  {
+    label: "handler",
+    title: "Handler",
+    meta: "macOS watchdog for the ceilings that panic your Mac",
+    body: "A macOS menu bar watchdog for the resource ceilings that take the whole machine down — open-file exhaustion, per-process attribution, time-to-exhaustion, and opt-in auto-reclaim. It shows how close you are, names the process eating the headroom, and can cut it off before launchd dies.",
+    icon: ShieldAlert,
+    href: handlerUrl,
+    action: "Handler on GitHub",
   },
   {
     label: "next",
@@ -98,6 +122,8 @@ const footerGroups = [
     links: [
       ["MCPlexer", mcplexerUrl],
       ["brw", brwUrl],
+      ["Resident", residentUrl],
+      ["Handler", handlerUrl],
     ],
   },
   {
@@ -154,8 +180,8 @@ export default function HomePage() {
               Don Works is where we open up the tools we build at Revitt. We
               make them to do our own work properly, and when one turns out to
               be useful beyond our own projects, we share it here for anyone to
-              pick up and run with. It starts with MCPlexer and brw, and it
-              grows as we open up more.
+              pick up and run with. Right now that&apos;s MCPlexer, brw,
+              Resident, and Handler — and it grows as we open up more.
             </p>
             <div className="hero-actions">
               <Link
@@ -190,9 +216,9 @@ export default function HomePage() {
               <h2>The tools we use, opened up</h2>
               <p>
                 Everything here is something we built to get our own work done,
-                then decided was worth sharing. Right now that&apos;s MCPlexer
-                and brw. We&apos;ll keep adding to it as more of our internal
-                tools prove useful enough to hand over.
+                then decided was worth sharing. Right now that&apos;s MCPlexer,
+                brw, Resident, and Handler. We&apos;ll keep adding to it as more
+                of our internal tools prove useful enough to hand over.
               </p>
             </div>
             <div className="panel-grid">
