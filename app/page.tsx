@@ -8,6 +8,7 @@ import {
   Globe,
   Handshake,
   Hammer,
+  ListChecks,
   Radar,
   ShieldAlert,
   Users,
@@ -36,6 +37,8 @@ const residentUrl =
   "https://github.com/Don-Works/resident?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
 const handlerUrl =
   "https://github.com/Don-Works/handler?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
+const remindersUrl =
+  "https://github.com/Don-Works/reminders-mcp?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
 const siteRepoUrl = "https://github.com/Don-Works/donworks.co.uk";
 const revittUrl =
   "https://revitt.co/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
@@ -76,6 +79,15 @@ const products: ProductItem[] = [
     icon: ShieldAlert,
     href: handlerUrl,
     action: "Handler on GitHub",
+  },
+  {
+    label: "reminders-mcp",
+    title: "Reminders MCP",
+    meta: "Apple Reminders, drivable by an agent",
+    body: "Your Reminders lists as twelve MCP tools in one Swift binary \u2014 due dates, alarms, repeats, priorities and notes, read and written straight through EventKit. An agent works the same list you do, on the same Mac, with no sync service in between.",
+    icon: ListChecks,
+    href: remindersUrl,
+    action: "Reminders MCP on GitHub",
   },
   {
     label: "next",
@@ -124,6 +136,7 @@ const footerGroups = [
       ["brw", brwUrl],
       ["Resident", residentUrl],
       ["Handler", handlerUrl],
+      ["Reminders MCP", remindersUrl],
     ],
   },
   {
@@ -181,7 +194,8 @@ export default function HomePage() {
               make them to do our own work properly, and when one turns out to
               be useful beyond our own projects, we share it here for anyone to
               pick up and run with. Right now that&apos;s MCPlexer, brw,
-              Resident, and Handler — and it grows as we open up more.
+              Resident, Handler, and Reminders MCP — and it grows as we open up
+              more.
             </p>
             <div className="hero-actions">
               <Link
