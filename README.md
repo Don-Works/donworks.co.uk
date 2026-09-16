@@ -4,7 +4,6 @@ The Next.js landing page for **[donworks.co.uk](https://donworks.co.uk/?utm_sour
 
 ## The suite
 
-- **MCPlexer** — directory-scoped MCP routing + tool control for AI agents. [mcplexer.com](https://mcplexer.com/?utm_source=donworks&utm_medium=readme&utm_campaign=donworks_oss) · [repo](https://github.com/Don-Works/mcplexer)
 - **brw** — semantic browser control for agents: a real, visible Chrome over MCP + HTTP. [brw.donworks.co.uk](https://brw.donworks.co.uk/?utm_source=donworks&utm_medium=readme&utm_campaign=donworks_oss) · [repo](https://github.com/Don-Works/brw)
 
 Everything is open source under AGPL-3.0 on the [Don Works org](https://github.com/Don-Works).

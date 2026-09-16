@@ -2,7 +2,6 @@ import Link from "next/link";
 import { DonWorksMark } from "./components/DonWorksMark";
 import {
   ArrowRight,
-  CircuitBoard,
   Gauge,
   Github,
   Globe,
@@ -29,8 +28,6 @@ type ProductItem = PanelItem & {
 };
 
 const githubUrl = "https://github.com/Don-Works";
-const mcplexerUrl =
-  "https://mcplexer.com/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
 const brwUrl =
   "https://brw.donworks.co.uk/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
 const residentUrl =
@@ -44,15 +41,6 @@ const revittUrl =
   "https://revitt.co/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
 
 const products: ProductItem[] = [
-  {
-    label: "mcplexer",
-    title: "MCPlexer",
-    meta: "agent gateway for MCP tools",
-    body: "The gateway every Revitt agent runs through. It decides which tools an agent can reach based on the folder you're working in, keeps your secrets out of the model, asks before anything risky, and keeps a record of every call. A bit like direnv, but for AI tools.",
-    icon: CircuitBoard,
-    href: mcplexerUrl,
-    action: "View MCPlexer",
-  },
   {
     label: "brw",
     title: "brw",
@@ -132,7 +120,6 @@ const footerGroups = [
   {
     title: "Tools",
     links: [
-      ["MCPlexer", mcplexerUrl],
       ["brw", brwUrl],
       ["Resident", residentUrl],
       ["Handler", handlerUrl],
@@ -193,23 +180,22 @@ export default function HomePage() {
               Don Works is where we open up the tools we build at Revitt. We
               make them to do our own work properly, and when one turns out to
               be useful beyond our own projects, we share it here for anyone to
-              pick up and run with. Right now that&apos;s MCPlexer, brw,
-              Resident, Handler, and Reminders MCP — and it grows as we open up
-              more.
+              pick up and run with. Right now that&apos;s brw, Resident, Handler,
+              and Reminders MCP — and it grows as we open up more.
             </p>
             <div className="hero-actions">
-              <Link
-                href={mcplexerUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="button button-primary"
-              >
-                <CircuitBoard aria-hidden="true" />
-                MCPlexer
-              </Link>
-              <Link href={brwUrl} target="_blank" rel="noopener noreferrer" className="button button-secondary">
+              <Link href={brwUrl} target="_blank" rel="noopener noreferrer" className="button button-primary">
                 <Radar aria-hidden="true" />
                 brw
+              </Link>
+              <Link
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button button-secondary"
+              >
+                <Github aria-hidden="true" />
+                Browse the tools
               </Link>
             </div>
             <dl className="facts-grid">
@@ -230,8 +216,8 @@ export default function HomePage() {
               <h2>The tools we use, opened up</h2>
               <p>
                 Everything here is something we built to get our own work done,
-                then decided was worth sharing. Right now that&apos;s MCPlexer,
-                brw, Resident, and Handler. We&apos;ll keep adding to it as more
+                then decided was worth sharing. Right now that&apos;s brw,
+                Resident, Handler, and Reminders MCP. We&apos;ll keep adding to it as more
                 of our internal tools prove useful enough to hand over.
               </p>
             </div>
