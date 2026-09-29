@@ -6,7 +6,7 @@ export function GET() {
       "Don Works is the open-source arm of Revitt.",
       "",
       "- Site: https://donworks.co.uk",
-      "- Parent: https://revitt.co",
+      "- Parent: https://revitt.co/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=llms_txt",
       "- Source: https://github.com/Don-Works",
       "- Brw: https://brw.donworks.co.uk (site) / https://github.com/Don-Works/brw",
       "- Resident: https://github.com/Don-Works/resident",
