@@ -37,8 +37,8 @@ const handlerUrl =
 const remindersUrl =
   "https://github.com/Don-Works/reminders-mcp?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
 const siteRepoUrl = "https://github.com/Don-Works/donworks.co.uk";
-const revittUrl =
-  "https://revitt.co/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
+const revittUrl = (placement: string) =>
+  `https://revitt.co/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=${placement}`;
 
 const products: ProductItem[] = [
   {
@@ -129,7 +129,7 @@ const footerGroups = [
   {
     title: "Revitt",
     links: [
-      ["Revitt", `${revittUrl}&utm_content=footer_revitt`],
+      ["Revitt", revittUrl("footer")],
       ["Don Works on GitHub", githubUrl],
     ],
   },
@@ -284,7 +284,7 @@ export default function HomePage() {
                 dozen private versions. If that doesn&apos;t fit how your
                 business works,{" "}
                 <Link
-                  href={`${revittUrl}&utm_content=contribute_commercial`}
+                  href={revittUrl("contribute_commercial")}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -339,6 +339,9 @@ export default function HomePage() {
         <div className="footer-bottom">
           <span>revitt.co / donworks.co.uk</span>
           <span>Made by Revitt · open for everyone</span>
+          <a href="#cookie-settings" data-cookie-settings="">
+            Cookie settings
+          </a>
         </div>
       </footer>
     </>

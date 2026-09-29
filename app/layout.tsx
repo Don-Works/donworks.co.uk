@@ -86,6 +86,12 @@ export default function RootLayout({
     <html lang="en" className={jetbrainsMono.variable}>
       <head>
         <script
+          defer
+          src="/consent-analytics.js"
+          data-ga-id="G-C3VD7CMQC9"
+          data-privacy-url="https://revitt.co/privacy?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=consent_banner"
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationJsonLd),
