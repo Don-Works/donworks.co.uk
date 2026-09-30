@@ -131,6 +131,7 @@ const footerGroups = [
     links: [
       ["Revitt", revittUrl("footer")],
       ["Don Works on GitHub", githubUrl],
+      ["Max’s technical blog", "https://maxrevitt.com/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=footer"],
     ],
   },
   {
