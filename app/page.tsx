@@ -8,7 +8,6 @@ import {
   Handshake,
   Hammer,
   ListChecks,
-  Radar,
   ShieldAlert,
   Users,
   type LucideIcon,
@@ -28,8 +27,6 @@ type ProductItem = PanelItem & {
 };
 
 const githubUrl = "https://github.com/Don-Works";
-const brwUrl =
-  "https://brw.donworks.co.uk/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
 const residentUrl =
   "https://github.com/Don-Works/resident?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=don_works_open_source";
 const handlerUrl =
@@ -41,15 +38,6 @@ const revittUrl = (placement: string) =>
   `https://revitt.co/?utm_source=donworks.co.uk&utm_medium=referral&utm_campaign=${placement}`;
 
 const products: ProductItem[] = [
-  {
-    label: "brw",
-    title: "brw",
-    meta: "a real browser for AI agents",
-    body: "brw drives a real, visible Chrome window so an agent can work on the actual web — signed-in tabs, real clicks and forms, and a check after every step that what it tried to do actually happened.",
-    icon: Radar,
-    href: brwUrl,
-    action: "View brw",
-  },
   {
     label: "resident",
     title: "Resident",
@@ -120,7 +108,6 @@ const footerGroups = [
   {
     title: "Tools",
     links: [
-      ["brw", brwUrl],
       ["Resident", residentUrl],
       ["Handler", handlerUrl],
       ["Reminders MCP", remindersUrl],
@@ -181,14 +168,14 @@ export default function HomePage() {
               Don Works is where we open up the tools we build at Revitt. We
               make them to do our own work properly, and when one turns out to
               be useful beyond our own projects, we share it here for anyone to
-              pick up and run with. Right now that&apos;s brw, Resident, Handler,
+              pick up and run with. Right now that&apos;s Resident, Handler,
               and Reminders MCP — and it grows as we open up more.
             </p>
             <div className="hero-actions">
-              <Link href={brwUrl} target="_blank" rel="noopener noreferrer" className="button button-primary">
-                <Radar aria-hidden="true" />
-                brw
-              </Link>
+              <a href="#tools" className="button button-primary">
+                <ArrowRight aria-hidden="true" />
+                Explore the tools
+              </a>
               <Link
                 href={githubUrl}
                 target="_blank"
@@ -217,7 +204,7 @@ export default function HomePage() {
               <h2>The tools we use, opened up</h2>
               <p>
                 Everything here is something we built to get our own work done,
-                then decided was worth sharing. Right now that&apos;s brw,
+                then decided was worth sharing. Right now that&apos;s
                 Resident, Handler, and Reminders MCP. We&apos;ll keep adding to it as more
                 of our internal tools prove useful enough to hand over.
               </p>
